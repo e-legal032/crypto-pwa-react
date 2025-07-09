@@ -7,18 +7,42 @@ export function useCriptoHistory(id, moneda, rango) {
   const [error, setError] = useState(false)
 
   useEffect(() => {
+    const apiKey = import.meta.env.VITE_CRYPTO_API_KEY
+    const baseUrl = 'https://min-api.cryptocompare.com/data/v2/'
+    const endpoint = rango === '1' ? 'histohour' : 'histoday'
+
+    // Mapeo manual de ID a símbolo para CryptoCompare
+    const simbolos = {
+      bitcoin: 'BTC',
+      ethereum: 'ETH',
+      tether: 'USDT',
+      litecoin: 'LTC',
+      solana: 'SOL'
+    }
+
+    const symbol = simbolos[id] || id.toUpperCase()
+    const url = `${baseUrl}${endpoint}?fsym=${symbol}&tsym=${moneda.toUpperCase()}&limit=${rango === '1' ? 24 : 7}`
+
     async function fetchData() {
       setCargando(true)
       try {
-        const res = await fetch(
-          `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${moneda}&days=${rango}`
-        )
-        if (!res.ok) throw new Error('No se pudo obtener la evolución')
+        const res = await fetch(url, {
+          headers: {
+            authorization: `Apikey ${apiKey}`
+          }
+        })
+
         const data = await res.json()
-        setDatos(data.prices)
+
+        if (data.Response !== 'Success') throw new Error('Sin datos válidos')
+
+        // Transformamos: [{ time, close }] → [[timestamp, precio]]
+        const valores = data.Data.Data.map(p => [p.time * 1000, p.close])
+
+        setDatos(valores)
         setError(false)
       } catch (err) {
-        console.error('Error al obtener historial:', err)
+        console.error('Error al obtener historial desde CryptoCompare:', err)
         setError(true)
       } finally {
         setCargando(false)
