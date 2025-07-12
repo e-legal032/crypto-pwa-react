@@ -1,0 +1,50 @@
+.menu {
+  text-align: center;
+  padding: 2rem;
+  font-family: system-ui, sans-serif;
+}
+
+.titulo {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.card {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 140px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.nombre {
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.boton {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  border: none;
+  background-color: #d0f0fd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}

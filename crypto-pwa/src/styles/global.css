@@ -1,0 +1,81 @@
+/* 🎨 Variables CSS */
+:root {
+  --color-oro: #FFD700;
+  --color-lima: #32CD32;
+  --color-naranja: #FFA500;
+  --color-amarillo: #FFFACD;
+  --color-azul: #3b82f6;
+  --color-suave: #f8f8f8;
+  --color-texto: #222;
+  --color-error: #ff4d4f;
+
+  --fuente-base: system-ui, sans-serif;
+  --sombra-suave: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 🧹 Reset y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-base);
+  background-color: var(--color-suave);
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+/* 🔧 Utilidades reutilizables */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+.btn--oro {
+  background-color: var(--color-oro);
+  color: #222;
+}
+
+.btn--lima {
+  background-color: var(--color-lima);
+  color: #fff;
+}
+
+.btn--naranja {
+  background-color: var(--color-naranja);
+  color: #fff;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: var(--sombra-suave);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.titulo {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--color-texto);
+}
+
+footer {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+  padding: 1rem;
+}

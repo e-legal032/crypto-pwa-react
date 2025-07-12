@@ -1,0 +1,11 @@
+.error {
+  padding: 1rem;
+  margin: 1rem auto;
+  background-color: #fdecea;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+  border-radius: 4px;
+  max-width: 400px;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+}

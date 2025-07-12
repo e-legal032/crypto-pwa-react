@@ -1,0 +1,20 @@
+.selector {
+  margin: 1rem;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+}
+
+.boton {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.activo {
+  border: 2px solid #333;
+  background: #dff0d8;
+}

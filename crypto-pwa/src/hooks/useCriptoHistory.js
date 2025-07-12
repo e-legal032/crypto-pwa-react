@@ -1,5 +1,6 @@
-// src/hooks/useCriptoHistory.js
 import { useEffect, useState } from 'react'
+
+const cacheHistorial = {}
 
 export function useCriptoHistory(id, moneda, rango) {
   const [datos, setDatos] = useState([])
@@ -11,7 +12,6 @@ export function useCriptoHistory(id, moneda, rango) {
     const baseUrl = 'https://min-api.cryptocompare.com/data/v2/'
     const endpoint = rango === '1' ? 'histohour' : 'histoday'
 
-    // Mapeo manual de ID a símbolo para CryptoCompare
     const simbolos = {
       bitcoin: 'BTC',
       ethereum: 'ETH',
@@ -21,6 +21,15 @@ export function useCriptoHistory(id, moneda, rango) {
     }
 
     const symbol = simbolos[id] || id.toUpperCase()
+    const cacheKey = `${symbol}-${moneda}-${rango}`
+
+    // Si ya está en cache, usamos y salimos
+    if (cacheHistorial[cacheKey]) {
+      setDatos(cacheHistorial[cacheKey])
+      setCargando(false)
+      return
+    }
+
     const url = `${baseUrl}${endpoint}?fsym=${symbol}&tsym=${moneda.toUpperCase()}&limit=${rango === '1' ? 24 : 7}`
 
     async function fetchData() {
@@ -36,9 +45,8 @@ export function useCriptoHistory(id, moneda, rango) {
 
         if (data.Response !== 'Success') throw new Error('Sin datos válidos')
 
-        // Transformamos: [{ time, close }] → [[timestamp, precio]]
         const valores = data.Data.Data.map(p => [p.time * 1000, p.close])
-
+        cacheHistorial[cacheKey] = valores // guardamos en caché
         setDatos(valores)
         setError(false)
       } catch (err) {

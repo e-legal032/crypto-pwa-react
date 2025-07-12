@@ -1,0 +1,12 @@
+.aviso {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 1rem;
+  border-radius: 6px;
+  color: #856404;
+  margin: 1rem auto;
+  margin-bottom: 1rem;
+  max-width: 600px;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+}

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import styles from './CriptoCard.module.css'
 
 function CriptoCard({ id, nombre, simbolo, icono, precio, moneda }) {
   const navigate = useNavigate()
@@ -9,25 +10,15 @@ function CriptoCard({ id, nombre, simbolo, icono, precio, moneda }) {
 
   return (
     <div
+      className={styles.card}
       onClick={manejarClick}
-      style={{
-        width: '160px',
-        border: '1px solid #ddd',
-        padding: '1rem',
-        borderRadius: '8px',
-        textAlign: 'center',
-        backgroundColor: '#fefefe',
-        boxShadow: '0 0 6px rgba(0,0,0,0.05)',
-        cursor: 'pointer',
-        transition: 'transform 0.2s',
-      }}
       onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.03)')}
       onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
-     >
-      <div style={{ fontSize: '2rem' }}>{icono}</div>
-      <h3>{nombre}</h3>
-      <p>{simbolo}</p>
-      <strong style={{ fontSize: '1.1rem' }}>
+    >
+      <div className={styles.icon}>{icono}</div>
+      <h3 className={styles.nombre}>{nombre}</h3>
+      <p className={styles.simbolo}>{simbolo}</p>
+      <strong className={styles.precio}>
         {precio ? `${precio.toLocaleString()} ${moneda.toUpperCase()}` : '–'}
       </strong>
     </div>

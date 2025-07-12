@@ -1,0 +1,57 @@
+.detalle {
+  text-align: center;
+  padding: 2rem;
+  font-family: system-ui, sans-serif;
+}
+
+.volver {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.moneda {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.precio {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #3b82f6;
+}
+
+.actualizado {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.botonActualizar {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  background-color: #e0f7ff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.divisor {
+  margin: 2rem auto;
+  width: 60%;
+}
+
+.botonGrafico {
+  padding: 0.6rem 1rem;
+  background-color: #d0f0fd;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}

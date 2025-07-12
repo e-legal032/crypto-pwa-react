@@ -13,16 +13,25 @@ import {
   Filler
 } from 'chart.js'
 import 'chartjs-adapter-date-fns'
+import styles from './CriptoChart.module.css'
 
 ChartJS.register(LineElement, PointElement, LinearScale, TimeScale, Title, Tooltip, Filler)
 
 function CriptoChart({ moneda }) {
   const { id } = useParams()
   const navigate = useNavigate()
-  const [rango, setRango] = useState('1') // '1' para 24h, '7' para 7 días
+  const [rango, setRango] = useState('1')
 
   const { datos, cargando, error } = useCriptoHistory(id, moneda, rango)
   const nombre = id.charAt(0).toUpperCase() + id.slice(1)
+
+  const sitiosOficiales = {
+    bitcoin: 'https://bitcoin.org/es/',
+    ethereum: 'https://ethereum.org/es/',
+    tether: 'https://tether.to/es/',
+    litecoin: 'https://litecoin.org/es/',
+    solana: 'https://solana.com/es'
+  }
 
   const chartData = {
     labels: datos.map(p => new Date(p[0])),
@@ -66,57 +75,46 @@ function CriptoChart({ moneda }) {
   }
 
   return (
-    <div style={{ padding: '1rem', maxWidth: '700px', margin: '0 auto' }}>
-      <button
-        onClick={() => navigate('/')}
-        style={{
-          background: '#f0f0f0',
-          border: 'none',
-          padding: '0.5rem 1rem',
-          marginBottom: '1rem',
-          cursor: 'pointer',
-          borderRadius: '6px'
-        }}
-      >
+    <div className={styles.chart}>
+      <button className={styles.volver} onClick={() => navigate('/menu')}>
         ← Volver
       </button>
 
-      <h2 style={{ textAlign: 'center' }}>📈 Gráfico de {nombre}</h2>
-      <p style={{ textAlign: 'center' }}>Moneda: {moneda.toUpperCase()}</p>
+      <h2 className={styles.titulo}>📈 Gráfico de {nombre}</h2>
+      <p className={styles.moneda}>Moneda: {moneda.toUpperCase()}</p>
 
-      <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+      <div className={styles.rangos}>
         <button
+          className={`${styles.botonRango} ${rango === '1' ? styles.activo : ''}`}
           onClick={() => setRango('1')}
-          style={{
-            marginRight: '0.5rem',
-            padding: '0.5rem 1rem',
-            backgroundColor: rango === '1' ? '#d0f0fd' : '#f0f0f0',
-            border: 'none',
-            borderRadius: '4px'
-          }}
         >
           Últimas 24h
         </button>
 
         <button
+          className={`${styles.botonRango} ${rango === '7' ? styles.activo : ''}`}
           onClick={() => setRango('7')}
-          style={{
-            padding: '0.5rem 1rem',
-            backgroundColor: rango === '7' ? '#d0f0fd' : '#f0f0f0',
-            border: 'none',
-            borderRadius: '4px'
-          }}
         >
           Últimos 7 días
         </button>
       </div>
 
       {cargando ? (
-        <p>Cargando datos históricos...</p>
+        <p className={styles.estado}>Cargando datos históricos...</p>
       ) : error ? (
-        <p style={{ color: 'red' }}>⚠️ No se pudo cargar el gráfico</p>
+        <p className={styles.error}>⚠️ No se pudo cargar el gráfico</p>
       ) : (
-        <Line data={chartData} options={chartOptions} />
+        <>
+          <Line data={chartData} options={chartOptions} />
+
+          {sitiosOficiales[id] && (
+            <p className={styles.link}>
+              🌐 <a href={sitiosOficiales[id]} target="_blank" rel="noopener noreferrer">
+                Visitar sitio oficial de {nombre}
+              </a>
+            </p>
+          )}
+        </>
       )}
     </div>
   )

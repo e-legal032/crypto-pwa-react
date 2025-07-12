@@ -1,0 +1,35 @@
+.card {
+  width: 160px;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fefefe;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s;
+  font-family: system-ui, sans-serif;
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.nombre {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.simbolo {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.precio {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #3b82f6;
+}

@@ -1,0 +1,28 @@
+.listado {
+  text-align: center;
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+}
+
+.boton {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #e0f7ff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.actualizado {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}

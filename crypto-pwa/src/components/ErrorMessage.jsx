@@ -1,16 +1,8 @@
-// src/components/ErrorMessage.jsx
+import styles from './ErrorMessage.module.css'
+
 function ErrorMessage({ mensaje }) {
   return (
-    <div style={{
-      padding: '1rem',
-      margin: '1rem auto',
-      backgroundColor: '#fdecea',
-      color: '#a94442',
-      border: '1px solid #ebccd1',
-      borderRadius: '4px',
-      maxWidth: '400px',
-      textAlign: 'center'
-    }}>
+    <div className={styles.error}>
       ⚠️ {mensaje}
     </div>
   )
