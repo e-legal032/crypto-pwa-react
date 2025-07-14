@@ -19,23 +19,14 @@ function App() {
   return (
     <>
       {/* 🌙 Toggle de modo oscuro */}
-      <button
-        onClick={() => setModoOscuro(prev => !prev)}
-        style={{
-          position: 'fixed',
-          top: '1rem',
-          right: '1.5rem',
-          padding: '0.5rem 1rem',
-          border: 'none',
-          backgroundColor: 'var(--color-oro)',
-          color: 'var(--color-texto)',
-          borderRadius: '6px',
-          cursor: 'pointer',
-          zIndex: 999
-        }}
-      >
-        {modoOscuro ? '☀️ Modo claro' : '🌙 Modo oscuro'}
-      </button>
+      <div style={{ position: 'relative' }}>
+        <button
+          onClick={() => setModoOscuro(prev => !prev)}
+          className="modoToggle"
+        >
+          {modoOscuro ? '☀️ Modo claro' : '🌙 Modo oscuro'}
+        </button>
+      </div>
 
       <Header />
 

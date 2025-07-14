@@ -15,7 +15,7 @@ function CriptoMenu({ modoOscuro }) {
   return (
     <div className={styles.menu}>
       
-        <h1 className={styles.titulo}>💰 Seleccioná una criptomoneda</h1>
+        <h1 className={styles.titulo}>Seleccioná una criptomoneda</h1>
         <div className={styles.grid}>
           {criptosFavoritas.map(cripto => (
             <div

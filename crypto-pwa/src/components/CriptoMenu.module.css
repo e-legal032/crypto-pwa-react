@@ -2,20 +2,31 @@
   
   display: flex;
   flex-direction: column;
-
-
- 
   padding: 4rem 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .titulo {
   margin-bottom: 2rem;
   font-size: 1.5rem;
+  text-align: center;
   color: var(--color-texto);
+  animation: fadeInSlide 0.8s ease-out both;
 }
+
 
 .grid {
   display: flex;

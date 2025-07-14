@@ -44,7 +44,7 @@ function CriptoDetalle({ moneda }) {
 
       {!cargando && !error && (
         <>
-          <h3>💸 Precio actual</h3>
+          <h3 className={styles.subtitulo}>Precio actual</h3>
           <p className={styles.precio}>
             {precio?.toLocaleString()} {moneda.toUpperCase()}
           </p>
