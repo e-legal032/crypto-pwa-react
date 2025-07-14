@@ -15,6 +15,7 @@
 }
 
 .activo {
-  border: 2px solid #333;
-  background: #dff0d8;
+  border: 2px solid var(--color-lima);
+  background: var(--color-lima);
+  color: #fff;
 }

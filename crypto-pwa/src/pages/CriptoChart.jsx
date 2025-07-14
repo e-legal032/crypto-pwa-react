@@ -50,6 +50,7 @@ function CriptoChart({ moneda }) {
 
   const chartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         type: 'time',
@@ -105,7 +106,9 @@ function CriptoChart({ moneda }) {
         <p className={styles.error}>⚠️ No se pudo cargar el gráfico</p>
       ) : (
         <>
-          <Line data={chartData} options={chartOptions} />
+          <div className={styles.canvas}>
+            <Line data={chartData} options={chartOptions} />
+          </div>
 
           {sitiosOficiales[id] && (
             <p className={styles.link}>

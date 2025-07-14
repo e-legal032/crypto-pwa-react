@@ -1,5 +1,6 @@
 /* 🎨 Variables CSS */
 :root {
+  --color-fondo: #fefefe;
   --color-oro: #FFD700;
   --color-lima: #32CD32;
   --color-naranja: #FFA500;
@@ -8,7 +9,6 @@
   --color-suave: #f8f8f8;
   --color-texto: #222;
   --color-error: #ff4d4f;
-
   --fuente-base: system-ui, sans-serif;
   --sombra-suave: 0 0 8px rgba(0, 0, 0, 0.05);
 }
@@ -22,7 +22,7 @@
 
 body {
   font-family: var(--fuente-base);
-  background-color: var(--color-suave);
+  background-color: var(--color-fondo);
   color: var(--color-texto);
   line-height: 1.5;
 }
@@ -67,10 +67,17 @@ body {
 }
 
 .titulo {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  color: var(--color-naranja);
   text-align: center;
-  color: var(--color-texto);
+  margin-bottom: 1rem;
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  color: var(--color-oro);
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 footer {
@@ -78,4 +85,39 @@ footer {
   color: #666;
   text-align: center;
   padding: 1rem;
+}
+/* 🌙 Modo oscuro */
+body.dark {
+  --color-fondo: #1a1a1a;
+  --color-texto: #f4f4f4;
+  --color-oro: #bfa93d;
+  --color-lima: #57b85c;
+  --color-naranja: #cc7722;
+  --color-amarillo: #33331a;
+  --color-error: #ff888a;
+  --sombra-suave: 0 0 12px rgba(255, 255, 255, 0.08);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+
+  .boton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .actualizado,
+  .moneda {
+    font-size: 0.85rem;
+    text-align: center;
+  }
 }

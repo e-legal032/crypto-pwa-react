@@ -7,7 +7,7 @@
 .volver {
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #f0f0f0;
+  background-color: var(--color-suave);
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -16,26 +16,27 @@
 .moneda {
   margin-bottom: 1rem;
   font-size: 0.95rem;
-  color: #333;
+  color: var(--color-texto);
 }
 
 .precio {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #3b82f6;
+  color: var(--color-naranja);
 }
 
 .actualizado {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--color-texto);
   margin-bottom: 1rem;
 }
 
 .botonActualizar {
   margin-top: 0.5rem;
   padding: 0.4rem 1rem;
-  background-color: #e0f7ff;
+  background-color: var(--color-naranja);
+  color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -49,7 +50,8 @@
 
 .botonGrafico {
   padding: 0.6rem 1rem;
-  background-color: #d0f0fd;
+  background-color: var(--color-oro);
+  color: #222;
   border: none;
   border-radius: 6px;
   cursor: pointer;

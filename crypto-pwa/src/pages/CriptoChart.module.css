@@ -1,18 +1,26 @@
 .chart {
-  padding: 1rem;
+  padding: 3rem 1rem 2rem;
   max-width: 700px;
   margin: 0 auto;
   font-family: system-ui, sans-serif;
 }
 
-.volver {
-  background: #f0f0f0;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  border-radius: 6px;
+.canvas {
+  width: 100%;
+  max-width: 700px;
+  height: 300px;
+  margin: 0 auto;
 }
+
+.volver {
+  background-color: var(--color-oro);
+  color: #222;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 
 .titulo {
   text-align: center;
@@ -40,8 +48,10 @@
 }
 
 .activo {
-  background-color: #d0f0fd;
+  background-color: var(--color-lima);
+  color: #fff;
 }
+
 
 .estado {
   text-align: center;
@@ -62,4 +72,16 @@
   text-decoration: none;
   color: #3b82f6;
   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .grafico {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .botonRango {
+    margin: 0.5rem auto;
+    display: block;
+  }
 }

@@ -1,13 +1,20 @@
 .menu {
-  text-align: center;
-  padding: 2rem;
-  font-family: system-ui, sans-serif;
+  
+  display: flex;
+  flex-direction: column;
+
+
+ 
+  padding: 4rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .titulo {
   margin-bottom: 2rem;
   font-size: 1.5rem;
-  color: #222;
+  color: var(--color-texto);
 }
 
 .grid {
@@ -18,13 +25,18 @@
 }
 
 .card {
-  background: #f8f8f8;
+  background-color: #e6b800;
   border-radius: 8px;
   padding: 1rem;
   width: 140px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--sombra-suave);
   transition: transform 0.2s ease-in-out;
 }
+.cardDark {
+  background-color: #2a2a2a;
+  color: var(--color-texto);
+}
+
 
 .card:hover {
   transform: scale(1.04);
@@ -32,9 +44,11 @@
 
 .icon {
   font-size: 2rem;
+  color: var(--color-texto); /* emoji heredado, mejor aclararlo */
 }
 
 .nombre {
+  color: var(--color-texto); /* para forzar visibilidad en modo oscuro */
   font-weight: bold;
   margin: 0.5rem 0;
 }
@@ -43,8 +57,28 @@
   margin-top: 0.5rem;
   padding: 0.3rem 0.7rem;
   border: none;
-  background-color: #d0f0fd;
+  background-color: #cc9f00;
+  color: #fff;
   border-radius: 4px;
   cursor: pointer;
   font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
 }
+.boton:hover {
+  background-color: #d6aa00;         /* efecto brillo*/
+}
+
+@media (max-width: 600px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+}
+
+
+
