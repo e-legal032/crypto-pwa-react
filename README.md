@@ -1,4 +1,4 @@
-![Banner de CryptoApp](./assets/banner-cryptoapp.png)
+![Banner de CryptoApp](./crypto-pwa/src/assets/banner-cryptoapp.png)
 > Cotizador de criptomonedas en tiempo real — app instalable (PWA) con diseño responsive y modo oscuro/claro.
 
 # 🚀 CryptoApp — Cotizador de criptomonedas en tiempo real
@@ -103,6 +103,6 @@ MIT License
 
 ---
 
-![Capture1](./assets/grafico_bitcoin.png)
+![Capture1](./crypto-pwa/src/assets/grafico_bitcoin.png)
 
 
