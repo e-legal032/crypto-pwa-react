@@ -33,6 +33,7 @@ CryptoApp es una aplicación web moderna que permite visualizar el precio actual
  [https://cotizador-crypto5.netlify.app](https://cotizador-crypto5.netlify.appp)
 
 Instalable directamente desde Chrome (Android/desktop) o Safari (iOS) como PWA.
+---
 
 ## 📲 Instalación como PWA
 
