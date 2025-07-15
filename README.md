@@ -28,6 +28,11 @@ CryptoApp es una aplicación web moderna que permite visualizar el precio actual
 - DevTools + Lighthouse para validación de PWA
 
 ---
+## 📲 Vivo
+
+ [https://cotizador-crypto5.netlify.app](https://cotizador-crypto5.netlify.appp)
+
+Instalable directamente desde Chrome (Android/desktop) o Safari (iOS) como PWA.
 
 ## 📲 Instalación como PWA
 
@@ -104,5 +109,4 @@ MIT License
 ---
 
 ![Capture1](./crypto-pwa/src/assets/grafico_bitcoin.png)
-
 
